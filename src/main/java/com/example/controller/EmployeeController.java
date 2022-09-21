@@ -29,7 +29,7 @@ public class EmployeeController {
 		try {
 			return new ResponseEntity<>(empService.saveEmployee(employee), HttpStatus.CREATED);
 		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	}
 
@@ -44,7 +44,7 @@ public class EmployeeController {
 
 			return new ResponseEntity<>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		}
 	}
 
