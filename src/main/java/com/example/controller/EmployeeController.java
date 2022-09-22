@@ -44,7 +44,7 @@ public class EmployeeController {
 
 			return new ResponseEntity<>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -55,7 +55,7 @@ public class EmployeeController {
 		if (employee.isPresent()) {
 			return new ResponseEntity<>(employee.get(), HttpStatus.OK);
 		}
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 }
