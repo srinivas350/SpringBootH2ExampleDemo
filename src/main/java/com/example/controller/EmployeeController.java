@@ -57,5 +57,11 @@ public class EmployeeController {
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
+	
+	@RequestMapping("/employee/hai")
+	public String welcome()
+	{
+		return "Hai";
+	}
 
 }
