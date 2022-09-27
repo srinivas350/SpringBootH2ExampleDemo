@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,6 +55,12 @@ public class EmployeeController {
 			return new ResponseEntity<>(employee.get(), HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}
+	
+	@GetMapping("/hai")
+	public String getHai()
+	{
+		return "Hai";
 	}
 
 }
