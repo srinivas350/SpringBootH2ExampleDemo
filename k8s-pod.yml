@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: springbooth2example-rs
+  labels:
+    app: springbooth2example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springbooth2example
+  template:
+    metadata:
+      name: springbooth2example
+      labels:
+        app: springbooth2example
+    spec:
+      containers:
+        - name: springbooth2example
+          image: srinivas350/springbooth2example
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always

@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Employee {
 	
 	@Id
