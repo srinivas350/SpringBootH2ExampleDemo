@@ -43,12 +43,4 @@ public class EmployeeController {
 		return new ResponseEntity<Optional<Employee>>(response,HttpStatus.OK);
 	}
 	
-	@GetMapping("/hello")
-	public String sampleTest()
-	{
-		return "Hello User";
-	}
-	
-	
-
 }
