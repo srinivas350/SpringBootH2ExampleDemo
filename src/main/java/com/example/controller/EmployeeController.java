@@ -26,6 +26,7 @@ public class EmployeeController {
 	@PostMapping("/insert")
 	public ResponseEntity<InputEmployee> insertEmployee(@RequestBody InputEmployee employee)
 	{
+		System.out.println(employee.getEmpFirstName());
 		return new ResponseEntity<>(service.saveEmployee(employee),HttpStatus.OK);
 	}
 	
