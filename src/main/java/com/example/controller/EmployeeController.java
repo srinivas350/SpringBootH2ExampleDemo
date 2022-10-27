@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Employee;
+import com.example.entity.InputEmployee;
 import com.example.service.EmployeeService;
 
 @RestController
@@ -23,30 +24,21 @@ public class EmployeeController {
 	public EmployeeService service;
 	
 	@PostMapping("/insert")
-	public ResponseEntity<Employee> insertEmployee(@RequestBody Employee emp)
+	public ResponseEntity<InputEmployee> insertEmployee(@RequestBody InputEmployee employee)
 	{
-		Employee response=service.saveEmployee(emp);
-		return new ResponseEntity<Employee>(response,HttpStatus.OK);
+		return new ResponseEntity<>(service.saveEmployee(employee),HttpStatus.OK);
 	}
 	
 	@GetMapping("/allEmployees")
 	public ResponseEntity<List<Employee>> getAllEmployees()
 	{
-		List<Employee> response=service.getAllEmployees();
-		return new ResponseEntity<List<Employee>>(response,HttpStatus.OK);
+		return new ResponseEntity<>(service.getAllEmployees(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/findById/{empId}")
 	public ResponseEntity<Optional<Employee>> findEmployee(@PathVariable("empId") int empId)
 	{
-		Optional<Employee> response=service.getEmployee(empId);
-		return new ResponseEntity<Optional<Employee>>(response,HttpStatus.OK);
+		return new ResponseEntity<>(service.getEmployee(empId),HttpStatus.OK);
 	}
-	
-	@GetMapping("/hello")
-	public String sampleTest(String message)
-	{
-		return "Hello "+message;
-	}
-	
+		
 }

@@ -6,11 +6,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.example.entity.Employee;
+import com.example.entity.InputEmployee;
 
 @Service
 public interface EmployeeService {
 	
-	public Employee saveEmployee(Employee emp);
+	public InputEmployee saveEmployee(InputEmployee emp);
 	public List<Employee> getAllEmployees();
 	public Optional<Employee> getEmployee(int empId);
 
