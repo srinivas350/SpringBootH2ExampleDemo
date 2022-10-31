@@ -41,5 +41,12 @@ public class EmployeeController {
 	{
 		return new ResponseEntity<>(service.getEmployee(empId),HttpStatus.OK);
 	}
+	
+	
+	@GetMapping("/greet")
+	public String sayGreet(@RequestParam("greet") String msg)
+	{
+		return "Hello "+msg;
+	}
 		
 }
