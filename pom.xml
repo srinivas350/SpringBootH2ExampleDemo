@@ -51,94 +51,15 @@
 	</dependencies>
 	<build>
 		<finalName>springbooth2example</finalName>
-		<pluginManagement>
 			<plugins>
-			<!--	<plugin>
-					<groupId>org.sonarsource.scanner.maven</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>3.7.0.1746</version>
-				</plugin>
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.6</version>
-				</plugin>	-->
-				<plugin>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
-					<configuration>
-						<excludes>
-							<exclude>
-								<groupId>org.projectlombok</groupId>
-								<artifactId>lombok</artifactId>
-							</exclude>
-						</excludes>
-						<mainClass>com.example.demo.SpringBootH2ExampleApplication</mainClass>
-						<layout>JAR</layout>
-					</configuration>
-				</plugin>
-				<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>11</source>
-						<target>11</target>
-						<release>11</release>
-						<fork>true</fork>
-						<executable>C:\Program Files\Java\jdk-11.0.15.1\bin\javac</executable>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <mainClass>com.example.demo.SpringBootH2ExampleApplication</mainClass>
+            <layout>JAR</layout>
+        </configuration>
+    </plugin>
+</plugins>
 	</build>
-
-	<!-- <profiles>
-		<profile>
-			<id>coverage</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.jacoco</groupId>
-						<artifactId>jacoco-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>prepare-agent</id>
-								<goals>
-									<goal>prepare-agent</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>report</id>
-								<goals>
-									<goal>report</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<configuration>
-							<source>1.8</source>
-							<target>1.8</target>
-							<release>1.8</release>
-							<fork>true</fork>
-							<executable>C:\Program Files\Java\jdk1.8.0_221\bin\javac</executable>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>sonar</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				 Optional URL to server. Default value is http://localhost:9000 -->
-		<!--		<sonar.host.url>http://localhost:1994</sonar.host.url>
-			</properties>
-		</profile>
-	</profiles>	-->
 </project>
