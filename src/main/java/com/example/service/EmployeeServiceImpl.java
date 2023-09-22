@@ -24,11 +24,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		emp1.setDesignation(emp.getDesignation());
 		emp1.setSalary(emp.getSalary());
 		emp1=repo.save(emp1);
-		emp.setEmpId(emp1.getEmpId());
-		emp.setEmpFirstName(emp1.getEmpFirstName());
-		emp.setEmpLastName(emp1.getEmpLastName());
-		emp.setDesignation(emp1.getDesignation());
-		emp.setSalary(emp1.getSalary());
+//		emp.setEmpId(emp1.getEmpId());
+//		emp.setEmpFirstName(emp1.getEmpFirstName());
+//		emp.setEmpLastName(emp1.getEmpLastName());
+//		emp.setDesignation(emp1.getDesignation());
+//		emp.setSalary(emp1.getSalary());
 		return emp;	
 	}
 

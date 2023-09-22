@@ -14,6 +14,8 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -47,10 +49,20 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
+		<finalName>SpringBootH2Example</finalName>
 		<pluginManagement>
 			<plugins>
+			<!--	<plugin>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>3.7.0.1746</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.8.6</version>
+				</plugin>	-->
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
@@ -61,28 +73,25 @@
 								<artifactId>lombok</artifactId>
 							</exclude>
 						</excludes>
+						<mainClass>com.example.demo.SpringBootH2ExampleApplication</mainClass>
+						<layout>JAR</layout>
 					</configuration>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.sonarsource.scanner.maven</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>3.7.0.1746</version>
-				</plugin>
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.6</version>
+					<configuration>
+						<source>11</source>
+						<target>11</target>
+						<release>11</release>
+						<fork>true</fork>
+						<executable>C:\Program Files\Java\jdk-11.0.15.1\bin\javac</executable>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
 
-	<profiles>
+	<!-- <profiles>
 		<profile>
 			<id>coverage</id>
 			<activation>
@@ -108,6 +117,16 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+							<release>1.8</release>
+							<fork>true</fork>
+							<executable>C:\Program Files\Java\jdk1.8.0_221\bin\javac</executable>
+						</configuration>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -117,9 +136,9 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<!-- Optional URL to server. Default value is http://localhost:9000 -->
-				<sonar.host.url>http://localhost:1994</sonar.host.url>
+				 Optional URL to server. Default value is http://localhost:9000 -->
+		<!--		<sonar.host.url>http://localhost:1994</sonar.host.url>
 			</properties>
 		</profile>
-	</profiles>
+	</profiles>	-->
 </project>
